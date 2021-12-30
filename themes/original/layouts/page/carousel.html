@@ -1,11 +1,29 @@
 <div id="{{ .Params.id }}" class="carousel text-nowrap overflow-auto vh-100">
-	{{ with .Site.GetPage "/gallery" }}
-		{{ range .Resources }}
-		{{ $metadata := split (strings.TrimSuffix ".jpg" .Name) "-" }}
-		{{ $tags := split (index $metadata 2) "," }}
-		{{ if in $tags "carousel" }}
-		<img draggable="false" class="h-100" src="{{ .RelPermalink }}" />
-		{{ end }}
-		{{ end }}
-	{{ end }}
+	{{- $photos := slice }}
+	{{- with .Site.GetPage "/gallery" }}
+		{{- range .Resources }}
+		{{- $metadata := split (strings.TrimSuffix ".jpg" .Name) "-" }}
+		{{- $tags := split (index $metadata 2) "," }}
+		{{- if in $tags "carousel" }}
+			{{- $photos = $photos | append . }}
+		{{- end }}
+		{{- end }}
+	{{- end }}
+	{{- $mid := div (len $photos) 2 }}
+	{{- range $index, $photo := $photos }}
+	<img data-index="{{ $index }}" draggable="false" class="h-100" src="{{ $photo.RelPermalink }}" />
+	{{- if eq $index $mid }}
+	<span id="masthead" class="position-relative h-100 d-inline-block">
+		{{- with $.Site.GetPage "/" }}
+		{{ $masthead := .Resources.GetMatch "masthead.jpg" }}
+		<img draggable="false" class="h-100" src="{{ $masthead.RelPermalink }}" />
+		{{- end }}
+		<div class="position-absolute top-50 start-50 translate-middle text-primary">
+			<h1 class="">Your</h1>
+			<h1 class="my-5">Big</h1>
+			<h1 class="">Day</h1>
+		</div>
+	</span>
+	{{- end }}
+	{{- end }}
 </div>

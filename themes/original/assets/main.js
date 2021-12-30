@@ -29,18 +29,12 @@ window.addEventListener('load', function(e) {
 		let run = true;
 		carousel_element.addEventListener('scroll', function(e) {
 			if (run && this.scrollLeft < (this.clientWidth * 1.10)) {
-				this.prepend(this.lastChild);
-				this.scrollLeft += this.firstChild.clientWidth;
+				this.prepend(this.lastElementChild);
+				this.scrollLeft += this.firstElementChild.clientWidth;
 			}
 			else if (this.scrollLeft > (this.scrollWidth - this.clientWidth * 1.10)) {
-				this.append(this.firstChild);
-				this.scrollLeft -= this.lastChild.clientWidth;
-			}
-		});
-
-		window.addEventListener('scroll', function(e) {
-			if (body.scrollTop != 0) {
-				console.log('body scrolled');
+				this.append(this.firstElementChild);
+				this.scrollLeft -= this.lastElementChild.clientWidth;
 			}
 		});
 	}
@@ -51,13 +45,20 @@ window.addEventListener('load', function(e) {
 //		const src = element.getAttribute('data-src');
 //		element.style['background-image'] = 'url("'+src+'")';
 //	}
-
+	let navbar = document.querySelector('#page-nav');
 	window.addEventListener('scroll', function(e) {
-		const parallaxes = document.querySelectorAll('.parallax');
-		for (let i=0;i<parallaxes.length;i++) {
-			const css = '0px '+(0.25 * document.scrollTop)+'px';
-			parallaxes[i].style['background-position'] = css;
-			//console.log(this.scrollTop);
-		}
+		if (window.scrollY > 100)
+			return;
+
+		const alpha = window.scrollY * 0.01;
+		navbar.style.setProperty('background-color', 'rgba(255, 255, 255, '+alpha+')');
 	});
+//	window.addEventListener('scroll', function(e) {
+//		const parallaxes = document.querySelectorAll('.parallax');
+//		for (let i=0;i<parallaxes.length;i++) {
+//			const css = '0px '+(0.25 * document.scrollTop)+'px';
+//			parallaxes[i].style['background-position'] = css;
+//			//console.log(this.scrollTop);
+//		}
+//	});
 });

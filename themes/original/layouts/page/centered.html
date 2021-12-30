@@ -1,10 +1,13 @@
 {{ $gallery := .Site.GetPage "/gallery" }}
-<div id="{{ .Params.id }}" class="layout-page-centered container text-center py-5"
-	{{ with .Params.background }}
-		{{ with $gallery.Resources.GetMatch . }}
-		style="background-image:url('{{ .RelPermalink }}');"
-		{{ end }}
-	{{ end }}>
-	<h1 class="section-title">{{ .Title }}</h1>
-	<div class="section-content">{{ .Content }}</div>
+<div id="{{ .Params.id }}" class="layout-page-centered position-relative">
+	<div class="position-absolute top-0 start-0 end-0 bottom-0"
+		{{ with .Params.background }}
+			{{ with $gallery.Resources.GetMatch . }}
+			style="background-image:url('{{ .RelPermalink }}');"
+			{{ end }}
+		{{ end }}></div>
+	<div class="container text-center py-5">
+		<h1 class="section-title">{{ .Title }}</h1>
+		<div class="section-content">{{ .Content }}</div>
+	</div>
 </div>

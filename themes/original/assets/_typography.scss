@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 
 .brand {
 	font-family: 'Emilys Candy', cursive;
@@ -46,4 +46,14 @@
 
 .page-content {
 	font-family: 'EB Garamond', serif;
+}
+
+#masthead {
+	font-family: 'Dancing Script', cursive;
+	h1 {
+		@extend .display-1;
+	}
+	h1:nth-child(2) {
+		font-family: 'Cinzel Decorative', cursive;
+	}
 }

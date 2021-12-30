@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-<head>
+<html lang="{{ .Site.LanguageCode }}"><head>
 	<title>{{ block "title" . }}
-	{{ .Site.Title }}
-	{{ end }}</title>
+	{{- .Site.Title }}
+	{{- end }}</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	{{ $style := resources.Get "main.scss" | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules/bootstrap/scss")) | resources.Fingerprint "sha512" }}
+{{- if hugo.IsProduction }}
+	{{- $style := resources.Get "main.scss" | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules/bootstrap/scss")) | resources.Fingerprint "sha512" }}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+{{- else }}
+	{{- $style := resources.Get "main.scss" | resources.ToCSS (dict "enableSourceMap" true "includePaths" (slice "node_modules/bootstrap/scss")) }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{- end }}
 </head><body>
+{{- partial "header.html" . }}
+{{- block "main" . }}{{ end }}
+{{- partial "footer.html" . }}
 
-{{- partial "header.html" . -}}
- 
-{{- block "main" . }}{{- end -}}
-
-{{- partial "footer.html" . -}}
-
-{{ $mainJs := resources.Get "main.js" | js.Build (dict "minify" true "sourceMap" "inline") | resources.Fingerprint "sha512" }}
-<script src="{{ $mainJs.RelPermalink }}" integrity="{{ $mainJs.Data.Integrity }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
-
+{{- if hugo.IsProduction }}
+	{{- $mainJs := resources.Get "main.js" | js.Build (dict "minify" true "sourceMap" "inline") | resources.Fingerprint "sha512" }}
+	<script src="{{ $mainJs.RelPermalink }}" integrity="{{ $mainJs.Data.Integrity }}"></script>
+{{- else }}
+	{{- $mainJs := resources.Get "main.js" | js.Build (dict "sourceMap" "inline") }}
+	<script src="{{ $mainJs.RelPermalink }}"></script>
+{{- end }}
+	<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 </body></html>

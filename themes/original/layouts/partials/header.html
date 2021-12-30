@@ -1,25 +1,18 @@
-
 <!-- Fullscreen nav menu -->
 <div id="navbarNavAltMarkup" class="collapse position-fixed top-0 w-100 vh-100">
 	<div class="d-flex flex-column h-100 align-items-center">
-		
-		{{ with resources.Get "divider-heart.svg" }}
-		{{ safeHTML .Content }}
-		{{ end }}
-
-		<!-- <hr class="mt-auto mb-3 w-50 align-self-center" /> -->
-
-{{ range .Params.sections }}
-	{{ with $.Site.GetPage . }}
-		<a class="nav-link my-3" href="#{{ .Params.id }}"><span data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">{{ .Title }}</span></a>
-	{{ end }}
-{{ end }}
-
+		{{- with resources.Get "divider-heart.svg" }}
+		{{- safeHTML .Content }}
+		{{- end }}
+{{- range .Params.sections }}
+	{{- with $.Site.GetPage . }}
+		{{- if .Params.menutext }}<a class="nav-link my-3" href="#{{ .Params.id }}"><span data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">{{ .Title }}</span></a>{{ end }}
+	{{- end }}
+{{- end }}
 		<hr class="my-3 w-50 align-self-center"/>
 		<div class="mb-auto mt-3">
 			{{ partial "social-media-block.html" . }}
 		</div>
-
 	</div>
 </div>
 
@@ -37,8 +30,8 @@
 		<div class="collapse navbar-collapse justify-content-center">
 			<div class="navbar-nav">
 				<!-- this sucks, what if the section anchor changes? -->
-				<a class="nav-link" href="#about">About</a>
 				<a class="nav-link" href="#services">Services</a>
+				<a class="nav-link" href="#about">About</a>
 				<a class="brand navbar-brand text-primary me-0 px-2" href="#carousel">{{ .Site.Title }}</a>
 				<a class="nav-link" href="#pricing">Pricing</a>
 				<a class="nav-link" href="#contact">Contact Me</a>
