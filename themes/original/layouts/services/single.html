@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main style="margin-top: 3.5rem;">
+	<div class="my-5 text-center">
+		<h3 class="page-heading">{{ .Title }}</h3>
+		<hr class="w-25 mx-auto my-5"/>
+		<div class="page-content">{{ .Content }}</div>
+	</div>
+
+	{{ $tag := .Params.tag }}
+	<div class="container">
+	{{ with .Site.GetPage "/gallery" }}
+	<div class="row my-5" data-masonry='{"percentPosition": true }'>
+	{{ range .Resources }}
+		{{ $metadata := split (strings.TrimSuffix ".jpg" .Name) "-" }}
+		{{ $tags := split (index $metadata 2) "," }}
+		{{ if in $tags $tag }}
+		<div class="col-lg-4 p-0"><img class="img-fluid" src="{{ .RelPermalink }}" /></div>
+		{{ end }}
+	{{ end }}
+    </div>
+	{{ end }}
+	</div>
+</main>
+{{ end }}

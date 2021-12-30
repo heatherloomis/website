@@ -1,0 +1,11 @@
+<div id="{{ .Params.id }}" class="carousel text-nowrap overflow-auto vh-100">
+	{{ with .Site.GetPage "/gallery" }}
+		{{ range .Resources }}
+		{{ $metadata := split (strings.TrimSuffix ".jpg" .Name) "-" }}
+		{{ $tags := split (index $metadata 2) "," }}
+		{{ if in $tags "carousel" }}
+		<img draggable="false" class="h-100" src="{{ .RelPermalink }}" />
+		{{ end }}
+		{{ end }}
+	{{ end }}
+</div>

@@ -1,0 +1,7 @@
+<div id="{{ .Params.id }}" class="container">
+	<div class="row">
+{{ range .Pages }}
+		<div class="col">{{ .Render "card" }}</div>
+{{ end }}
+	</div>
+</div>

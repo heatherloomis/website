@@ -1,0 +1,18 @@
+<!-- Footer -->
+<footer class="container-fluid">
+	<div class="row">
+		<div class="col">
+			{{ partial "social-media-block.html" . }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<small class="text-nowrap text-muted fst-italic">Copyright &copy; {{ .Site.Copyright }} {{ now.Format "2006" }}</small>
+		</div>
+		<div class="col-auto">
+			<a class="small text-nowrap text-muted" href="#">Privacy Policy</a>
+		</div>
+	</div>
+</footer>
+

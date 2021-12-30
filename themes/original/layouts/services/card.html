@@ -1,0 +1,12 @@
+<a class="text-reset text-decoration-none" href="{{ .RelPermalink }}">
+	<div class="service-card card mx-auto my-4" style="width:18rem;">
+		{{ $gallery := .Site.GetPage "/gallery" }}
+		{{ with $gallery.Resources.GetMatch .Params.image }}
+		<img src="{{ .RelPermalink }}" class="card-img-top" />
+		{{ end }}
+		<div class="card-body">
+			<h5 class="card-title">{{ .Title }}</h5>
+			<p class="card-text">{{ .Content }}</p>
+		</div>
+	</div>
+</a>

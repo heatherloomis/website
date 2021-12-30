@@ -1,0 +1,49 @@
+/**
+
+	Import fonts here!
+
+**/
+//@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap'); //font-family: 'Playfair Display', serif;
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap');
+
+
+.brand {
+	font-family: 'Emilys Candy', cursive;
+}
+
+.section-content {
+	font-family: 'EB Garamond', serif;
+}
+
+.section-title {
+	font-family: 'Dancing Script', cursive;
+}
+
+.section-subtitle {
+	@extend .small;
+	@extend .text-muted;
+	@extend .fst-italic;
+}
+
+.service-card {
+	.card-title {
+		font-family: 'Dancing Script', cursive;
+		@extend .display-5;
+		@extend .text-center;
+	}
+
+	.card-body {
+		font-family: 'EB Garamond', serif;
+	}
+}
+
+.page-heading {
+	font-family: 'Dancing Script', cursive;
+}
+
+.page-content {
+	font-family: 'EB Garamond', serif;
+}

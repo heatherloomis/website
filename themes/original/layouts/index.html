@@ -1,0 +1,9 @@
+{{ define "main" }}
+<main aria-role="main">
+	{{ range .Params.sections }}
+		{{ with $.Site.GetPage . }}
+			{{ .Render }}
+		{{ end }}
+	{{ end }}
+</main>
+{{ end }}

@@ -1,0 +1,5 @@
+<div class="text-center text-nowrap">
+	{{ range $.Site.Params.social }}
+	<a href="{{ .url }}"><i class="bi-{{ .site }}"></i></a>
+	{{ end }}
+</div>

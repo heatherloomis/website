@@ -1,0 +1,10 @@
+{{ $gallery := .Site.GetPage "/gallery" }}
+<div id="{{ .Params.id }}" class="layout-page-centered container text-center py-5"
+	{{ with .Params.background }}
+		{{ with $gallery.Resources.GetMatch . }}
+		style="background-image:url('{{ .RelPermalink }}');"
+		{{ end }}
+	{{ end }}>
+	<h1 class="section-title">{{ .Title }}</h1>
+	<div class="section-content">{{ .Content }}</div>
+</div>

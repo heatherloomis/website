@@ -1,0 +1,18 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Heather Loomis'
+theme = 'original'
+copyright = 'Heather Loomis'
+
+[[params.social]]
+	site = 'facebook'
+	url = 'https://facebook.com/heaatherloomis'
+[[params.social]]
+	site = 'instagram'
+	url = 'https://instagram.com/heatherloomis'
+[[params.social]]
+	site = 'pinterest'
+	url = 'https://pinterest.com/heatherloomis'
+[[params.social]]
+	site = 'github'
+	url = 'https://heatherloomis.github.io'
