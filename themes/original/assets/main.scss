@@ -3,10 +3,6 @@
 @import "bootstrap";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 
-body {
-//	width: 100%;
-}
-
 #navbarNavAltMarkup {
 	padding-top: 3.5rem;
 	z-index: $zindex-dropdown;
@@ -29,6 +25,10 @@ body {
 	background-size: cover;
 	z-index: -1;
 	//opacity: 0.3;
+}
+
+.section-background {
+	opacity: 0.8;
 }
 
 .section-divider {
