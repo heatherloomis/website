@@ -6,7 +6,10 @@
         {
             "label": "Hugo Development Server",
             "type": "shell",
-            "command": "docker run --rm --volume=\"C:\\Users\\dorky\\Desktop\\website:/src\" -it -p 1313:1313 klakegg/hugo:ext serve",
+            "command": "docker run --rm --volume=\"${PWD}:/src\" -it -p 1313:1313 klakegg/hugo:ext serve",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         }
     ]
