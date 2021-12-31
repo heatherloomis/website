@@ -10,6 +10,19 @@
             "options": {
                 "cwd": "${workspaceFolder}"
             },
+            "isBackground": true,
+            "problemMatcher": [],
+            "dependsOn": [
+                "Install NPM Dependencies"
+            ]
+        },
+        {
+            "label": "Install NPM Dependencies",
+            "type": "shell",
+            "command": "docker run --rm -it -v ${PWD}:/usr/src/app -w /usr/src/app node npm install",
+            "options": {
+                "cwd": "${workspaceFolder}/themes/original"
+            },
             "problemMatcher": []
         }
     ]
