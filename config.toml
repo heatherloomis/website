@@ -1,18 +1,15 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'Heather Loomis'
+title = 'Heather Loomis Photography'
 theme = 'original'
 copyright = 'Heather Loomis'
 
 [[params.social]]
 	site = 'facebook'
-	url = 'https://facebook.com/heaatherloomis'
+	url = 'https://facebook.com/HeatherLoomisPhotography'
 [[params.social]]
 	site = 'instagram'
-	url = 'https://instagram.com/heatherloomis'
-[[params.social]]
-	site = 'pinterest'
-	url = 'https://pinterest.com/heatherloomis'
+	url = 'https://instagram.com/HeatherLoomisPhoto'
 [[params.social]]
 	site = 'github'
 	url = 'https://heatherloomis.github.io'
