@@ -2,7 +2,7 @@
 title: About Me
 id: about
 layout: centered
-
+menutext: About
 background: 0004-H-weddings.jpg
 ---
 After growing up in various cities throughout the USA as an Air Force brat, I have chosen Austin as my home for the last 16 years. I cannot remember a time when I have not been behind a camera documenting events and happenstance moments, but on a professional level I have been in the photography industry for over 10 years. 
