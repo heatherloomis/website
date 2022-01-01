@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 
 .brand {
-	font-family: 'Emilys Candy', cursive;
+	font-family: 'EB Garamond', serif;
 }
 
 .section-content {
@@ -34,7 +34,7 @@
 
 .service-card {
 	.card-title {
-		font-family: 'Dancing Script', cursive;
+		font-family: 'EB Garamond', serif;
 		@extend .display-5;
 		@extend .text-center;
 	}
@@ -45,7 +45,7 @@
 }
 
 .page-heading {
-	font-family: 'Dancing Script', cursive;
+	font-family: 'EB Garamond', serif;
 }
 
 .page-content {
@@ -53,11 +53,15 @@
 }
 
 #masthead {
-	font-family: 'Dancing Script', cursive;
+	font-family: 'EB Garamond', serif;
 	h1 {
 		@extend .display-1;
 	}
 	h1:nth-child(2) {
 		font-family: 'Cinzel Decorative', cursive;
 	}
+}
+
+.nav-link {
+	font-family: 'EB Garamond', serif;
 }
