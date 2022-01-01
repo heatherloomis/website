@@ -27,7 +27,7 @@ $primary: #2f421f;
 }
 
 #masthead {
-	vertical-align: top;
+	vertical-align: middle;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -45,10 +45,20 @@ $primary: #2f421f;
 }
 
 .service-card .card-body {
-	height: 25rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 25rem;
 	& > div {
 		background-color: rgba(255, 255, 255, 0.8)
 	}
+}
+
+#about img {
+	max-width: 50%;
+	border-radius: 50%;
+	float: left;
+	@extend .px-2;
 }
 
 @import "typography";

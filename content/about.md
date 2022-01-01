@@ -3,13 +3,12 @@ title: About Heather
 id: about
 layout: centered
 menutext: About
-background: 0004-H-weddings.jpg
+# background: 0004-H-weddings.jpg
 ---
 
 ------
 
-
-After growing up around the country as an Air Force brat, **Austin** became my chosen home in 2006. For my entire life I have been behind a camera documenting all the things, and I have worked professionally as a photographer for over a decade. 
+![Photo of me](/gallery/0006-V-weddings.jpg "Heather Loomis") After growing up around the country as an Air Force brat, **Austin** became my chosen home in 2006. For my entire life I have been behind a camera documenting all the things, and I have worked professionally as a photographer for over a decade. 
 
 My photography style is **warm, bright, bohemian, fun**, and **natural**. I will capture the candid moments of your important event beautifully while my extensive background in portrait photography will ensure the details, poses, and expressions of you and your guests are on point.
 

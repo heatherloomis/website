@@ -15,10 +15,11 @@
 	{{- if eq $index $mid }}
 		{{- $masthead := ($.Site.GetPage "/").Resources.GetMatch "masthead.jpg" }}
 	<span id="masthead" class="d-inline-block h-100" style="background-image: url('{{ $masthead.RelPermalink }}');">
-		<div class="vw-100 d-flex flex-column">
-			<h1 class="mx-auto mt-5 pt-5">Your</h1>
+		<div class="vw-100 h-100 d-flex flex-column">
+			<!--<h1 class="mx-auto mt-5 pt-5">Your</h1>
 			<h1 class="mx-auto my-5">Big</h1>
-			<h1 class="mx-auto">Day</h1>
+			<h1 class="mx-auto">Day</h1>-->
+			{{ $.Content }}
 		</div>
 		<!--<div class="position-absolute top-50 start-50 translate-middle text-primary">
 			<h1 class="">Your</h1>
