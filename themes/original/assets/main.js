@@ -12,7 +12,7 @@ window.addEventListener('load', function(e) {
 			navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 0.0)');
 		}
 		else {
-			navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 1.0)');
+			navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 0.8)');
 		}
 	}
 
