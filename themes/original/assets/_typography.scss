@@ -16,10 +16,14 @@
 
 .section-content {
 	font-family: 'EB Garamond', serif;
+	@extend .fs-4;
+
 }
 
 .section-title {
-	font-family: 'Dancing Script', cursive;
+	font-family: 'EB Garamond', serif;
+	font-size: 50px;
+	font-weight: 400;
 }
 
 .section-subtitle {
