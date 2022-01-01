@@ -6,7 +6,7 @@
 		{{- end }}
 {{- range .Params.sections }}
 	{{- with $.Site.GetPage . }}
-		{{- if .Params.menutext }}<a class="nav-link my-3" href="#{{ .Params.id }}"><span data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">{{ .Title }}</span></a>{{ end }}
+		{{- if .Params.menutext }}<a class="nav-link my-3" href="#{{ .Params.id }}"><span data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">{{ .Params.menutext }}</span></a>{{ end }}
 	{{- end }}
 {{- end }}
 		<hr class="my-3 w-50 align-self-center"/>
@@ -21,22 +21,20 @@
 
 	<div class="container-fluid">
 
-		<a class="d-md-none brand navbar-brand text-primary me-0 px-2" href="#carousel">{{ .Site.Title }}</a>
+		<a class="brand navbar-brand text-primary me-0 px-2" href="#carousel">{{ .Site.Title }}</a>
 
 		<button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="collapse navbar-collapse justify-content-center">
+		<div class="collapse navbar-collapse justify-content-end">
 			<div class="navbar-nav">
-				<!-- this sucks, what if the section anchor changes? -->
-				<a class="nav-link" href="#services">Services</a>
-				<a class="nav-link" href="#about">About</a>
-				<a class="brand navbar-brand text-primary me-0 px-2" href="#carousel">{{ .Site.Title }}</a>
-				<a class="nav-link" href="#pricing">Pricing</a>
-				<a class="nav-link" href="#contact">Contact Me</a>
+{{- range .Params.sections }}
+	{{- with $.Site.GetPage . }}
+		{{- if .Params.menutext }}<a class="nav-link" href="#{{ .Params.id }}">{{ .Params.menutext }}</a>{{ end }}
+	{{- end }}
+{{- end }}
 			</div>
 		</div>
-
 	</div>
 </nav>

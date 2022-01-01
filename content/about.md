@@ -2,7 +2,7 @@
 title: About Heather
 id: about
 layout: centered
-
+menutext: About
 background: 0004-H-weddings.jpg
 ---
 

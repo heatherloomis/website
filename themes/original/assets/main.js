@@ -3,12 +3,25 @@ import { Collapse } from './themes/original/node_modules/bootstrap/js/dist/colla
 //import { ScrollSpy } from 'bootstrap/js/dist/scrollspy.js';
 /* {{ . }} */
 window.addEventListener('load', function(e) {
+	let navbar = document.querySelector('#page-nav');
+	function calculateNavbarOpacity() {
+		if (window.scrollY == 0) {
+			navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 0.0)');
+		}
+		else {
+			navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 1.0)');
+		}
+	}
+
+	calculateNavbarOpacity();
+
 	let carousel_element = document.getElementById('carousel');
 	if (carousel_element) {
 		let pageX, dragging = false;
 
-		carousel_element.scrollLeft = carousel_element.scrollWidth / 2;
-		//carousel_element.scrollLeft = 3000;
+		const masthead = document.getElementById('masthead');
+		carousel_element.scrollLeft = masthead.offsetLeft;
+
 		carousel_element.addEventListener('mousedown', function(e) {
 			dragging = true;
 			pageX = e.pageX;
@@ -39,26 +52,13 @@ window.addEventListener('load', function(e) {
 		});
 	}
 
-//	const parallaxes = document.querySelectorAll('.parallax');
-//	for (let i=0;i<parallaxes.length;i++) {
-//		let element = parallaxes[i];
-//		const src = element.getAttribute('data-src');
-//		element.style['background-image'] = 'url("'+src+'")';
-//	}
-	let navbar = document.querySelector('#page-nav');
 	window.addEventListener('scroll', function(e) {
-		if (window.scrollY > 100)
-			return;
-
-		const alpha = window.scrollY * 0.01;
-		navbar.style.setProperty('background-color', 'rgba(255, 255, 255, '+alpha+')');
-	});
-//	window.addEventListener('scroll', function(e) {
-//		const parallaxes = document.querySelectorAll('.parallax');
-//		for (let i=0;i<parallaxes.length;i++) {
-//			const css = '0px '+(0.25 * document.scrollTop)+'px';
-//			parallaxes[i].style['background-position'] = css;
-//			//console.log(this.scrollTop);
+		calculateNavbarOpacity();
+//		let alpha = 1.0;
+//		if (window.scrollY < 100) {
+//			alpha = window.scrollY * 0.01;
 //		}
-//	});
+//		navbar.style.setProperty('background-color', 'rgba(255, 255, 255, '+alpha+')');
+	});
+
 });
