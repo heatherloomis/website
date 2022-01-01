@@ -4,8 +4,11 @@ import { Collapse } from './themes/original/node_modules/bootstrap/js/dist/colla
 /* {{ . }} */
 window.addEventListener('load', function(e) {
 	let navbar = document.querySelector('#page-nav');
+	let carousel_element = document.getElementById('carousel');
+	const masthead = document.getElementById('masthead');
+
 	function calculateNavbarOpacity() {
-		if (window.scrollY == 0) {
+		if (window.scrollY == 0 && carousel_element.scrollLeft == masthead.offsetLeft) {
 			navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 0.0)');
 		}
 		else {
@@ -14,12 +17,9 @@ window.addEventListener('load', function(e) {
 	}
 
 	calculateNavbarOpacity();
-
-	let carousel_element = document.getElementById('carousel');
 	if (carousel_element) {
 		let pageX, dragging = false;
 
-		const masthead = document.getElementById('masthead');
 		carousel_element.scrollLeft = masthead.offsetLeft;
 
 		carousel_element.addEventListener('mousedown', function(e) {
@@ -49,16 +49,12 @@ window.addEventListener('load', function(e) {
 				this.append(this.firstElementChild);
 				this.scrollLeft -= this.lastElementChild.clientWidth;
 			}
+			calculateNavbarOpacity();
 		});
 	}
 
 	window.addEventListener('scroll', function(e) {
 		calculateNavbarOpacity();
-//		let alpha = 1.0;
-//		if (window.scrollY < 100) {
-//			alpha = window.scrollY * 0.01;
-//		}
-//		navbar.style.setProperty('background-color', 'rgba(255, 255, 255, '+alpha+')');
 	});
 
 });
