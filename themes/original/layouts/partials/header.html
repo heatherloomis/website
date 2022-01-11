@@ -1,9 +1,7 @@
 <!-- Fullscreen nav menu -->
 <div id="navbarNavAltMarkup" class="collapse position-fixed top-0 w-100 vh-100">
 	<div class="d-flex flex-column h-100 align-items-center">
-		{{- with resources.Get "divider-heart.svg" }}
-		{{- safeHTML .Content }}
-		{{- end }}
+		<hr class="m-3 w-50 align-self-center"/>
 {{- range .Params.sections }}
 	{{- with $.Site.GetPage . }}
 		{{- if .Params.menutext }}<a class="nav-link my-3" href="#{{ .Params.id }}"><span data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">{{ .Params.menutext }}</span></a>{{ end }}

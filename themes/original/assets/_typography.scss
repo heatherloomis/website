@@ -9,9 +9,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Molle:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 .brand {
-	font-family: 'EB Garamond', serif;
+	font-family: 'Cinzel Decorative', cursive;
+	@include media-breakpoint-down(md){
+		font-size: 1rem;
+	}
 }
 
 .section-content {
@@ -34,8 +45,8 @@
 
 .service-card {
 	.card-title {
-		font-family: 'EB Garamond', serif;
-		@extend .display-5;
+		font-family: 'Satisfy', cursive;
+		@extend .display-4;
 		@extend .text-center;
 	}
 
@@ -63,5 +74,17 @@
 }
 
 .nav-link {
-	font-family: 'EB Garamond', serif;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.1rem;
+}
+
+
+.masthead-text {
+	font-family: 'Cinzel Decorative', cursive;
+	font-weight: 700;
+	font-size: 11rem;
+	color: #fbfaff;
+	@include media-breakpoint-down(md){
+		
+	}
 }
