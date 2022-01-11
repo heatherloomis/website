@@ -1,5 +1,5 @@
 // main.js
-import { Collapse } from './themes/original/node_modules/bootstrap/js/dist/collapse.js'
+import { Collapse } from 'bootstrap/js/dist/collapse.js'
 //import { ScrollSpy } from 'bootstrap/js/dist/scrollspy.js';
 /* {{ . }} */
 window.addEventListener('load', function(e) {
