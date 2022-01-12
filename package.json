@@ -10,10 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/heatherloomis/website.git"
   },
-  "author": "John",
+  "author": "John & Heather",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/heatherloomis/website/issues"
   },
-  "homepage": "https://github.com/heatherloomis/website#readme"
+  "homepage": "https://github.com/heatherloomis/website#readme",
+  "devDependencies": {
+    "theme-original": "file:themes/original"
+  }
 }
