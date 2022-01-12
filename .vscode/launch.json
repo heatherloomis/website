@@ -5,12 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-chrome",
+            "command": "docker run --rm --volume=\"${workspaceFolder}:/src\" -it -p 1313:1313 klakegg/hugo:ext serve --poll 250ms",
+            "name": "Hugo Server",
             "request": "launch",
-            "name": "Client",
-            "url": "http://localhost:1313",
-            "webRoot": "${workspaceFolder}",
-            "preLaunchTask": "Hugo Development Server"
+            "type": "node-terminal",
+            "preLaunchTask": "Install NPM Dependencies"
         }
     ]
 }
