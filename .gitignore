@@ -4,3 +4,4 @@ node_modules/
 package-lock.json
 content/gallery/*.jpg
 content/masthead.jpg
+.grip/
