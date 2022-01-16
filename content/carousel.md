@@ -3,5 +3,5 @@ title: Carousel
 id: carousel
 layout: carousel
 ---
-## JOY ## { .masthead-text }
+## Capturing special events and people. ## { .masthead-text }
 
