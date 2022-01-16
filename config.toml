@@ -13,3 +13,6 @@ copyright = 'Heather Loomis'
 [[params.social]]
 	site = 'github'
 	url = 'https://github.com/heatherloomis'
+
+[imaging.exif]
+includeFields = "Keywords"

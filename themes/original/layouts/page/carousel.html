@@ -14,7 +14,7 @@
 	<img data-index="{{ $index }}" draggable="false" class="h-100" src="{{ $photo.RelPermalink }}" />
 	{{- if eq $index $mid }}
 		{{- $masthead := ($.Site.GetPage "/").Resources.GetMatch "masthead.jpg" }}
-	<span id="masthead" class="d-inline-block h-100" style="background-image: url('{{ $masthead.RelPermalink }}');">
+	<span id="masthead" class="d-inline-block h-100"{{ with $masthead }} style="background-image: url('{{ .RelPermalink }}');"{{ end }}>
 		<div class="vw-100 h-100 d-flex flex-column">
 			<!--<h1 class="mx-auto mt-5 pt-5">Your</h1>
 			<h1 class="mx-auto my-5">Big</h1>
