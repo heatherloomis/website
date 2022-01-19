@@ -11,21 +11,16 @@
 	{{- end }}
 	{{- $mid := div (len $photos) 2 }}
 	{{- range $index, $photo := $photos }}
+	{{/*}}<pre>{{ $photo.Exif.Tags.MakerNote }}</pre>{{*/}}
 	<img data-index="{{ $index }}" draggable="false" class="h-100" src="{{ $photo.RelPermalink }}" />
 	{{- if eq $index $mid }}
 		{{- $masthead := ($.Site.GetPage "/").Resources.GetMatch "masthead.jpg" }}
 	<span id="masthead" class="d-inline-block h-100"{{ with $masthead }} style="background-image: url('{{ .RelPermalink }}');"{{ end }}>
-		<div class="vw-100 h-100 d-flex flex-column">
-			<!--<h1 class="mx-auto mt-5 pt-5">Your</h1>
-			<h1 class="mx-auto my-5">Big</h1>
-			<h1 class="mx-auto">Day</h1>-->
-			{{ $.Content }}
+		<div class="vw-100 h-100 d-flex flex-row justify-content-between align-items-center">
+			<div class="masthead-arrow"><i class="bi bi-chevron-left"></i></div>
+			<div class="masthead-content">{{ $.Content }}</div>
+			<div class="masthead-arrow"><i class="bi bi-chevron-right"></i></div>
 		</div>
-		<!--<div class="position-absolute top-50 start-50 translate-middle text-primary">
-			<h1 class="">Your</h1>
-			<h1 class="my-5">Big</h1>
-			<h1 class="">Day</h1>
-		</div>-->
 	</span>
 	{{- end }}
 	{{- end }}

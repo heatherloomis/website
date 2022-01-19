@@ -66,4 +66,14 @@ $primary: #1d3531;
 	@extend .text-center;
 }
 
+.masthead-arrow {
+	i.bi {
+		color: rgba(0, 0, 0, 0.1);
+		font-size: 2.5rem;
+	}
+}
+.masthead-content {
+	
+}
+
 @import "typography";
