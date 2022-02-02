@@ -14,5 +14,5 @@ copyright = 'Heather Loomis'
 	site = 'github'
 	url = 'https://github.com/heatherloomis'
 
-[imaging.exif]
-includeFields = "Keywords"
+#[imaging.exif]
+#includeFields = ".*"
