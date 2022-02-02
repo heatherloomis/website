@@ -19,12 +19,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
 
 .brand {
-	font-family: 'Lobster', cursive;
+	font-family: 'Oleo Script Swash Caps', cursive;
 	@include media-breakpoint-down(md){
-		font-size: 1rem;
-	}
+		font-size: 1.5rem;	}
+	font-size: 2rem;
+
 }
 
 .section-content {
